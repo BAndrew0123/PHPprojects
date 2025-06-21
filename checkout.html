@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="ecommerce.css">
+    <script src="https://kit.fontawesome.com/eda49a6855.js" crossorigin="anonymous"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">EShop</a>
+            </div>
+            <div class="navlinks">
+                <ul>
+                    <li><a href="ecommerce.html#home">Home</a></li>
+                    <li><a href="ecommerce.html#Products">Products</a></li>
+                    <li><a href="ecommerce.html#contact">Contact Us</a></li>
+                    <li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Checkout</h1>
+        <div class="checkout-container">
+            <div class="billing-details">
+                <h2>Billing Information</h2>
+                <form id="checkout-form" method="post">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="address" placeholder="Address" required>
+                    <input type="text" name="city" placeholder="City" required>
+                    <input type="text" name="zip" placeholder="ZIP Code" required>
+                    <input type="text" name="phone" placeholder="Phone Number" required>
+
+                    <h2>Payment Method</h2>
+                    <div class="payment-options">
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="payment" value="paypal" checked>
+                            <label for="paypal">PayPal</label>
+                            <div id="paypal-button-container" class="payment-details"></div>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="mpesa" name="payment" value="mpesa">
+                            <label for="mpesa">M-Pesa</label>
+                            <div id="mpesa-details" class="payment-details" style="display:none;">
+                                <p>You'll receive a payment request on your phone after placing the order</p>
+                                <div class="mpesa-input">
+                                    <label for="mpesa-phone">Safaricom Number:</label>
+                                    <input type="text" id="mpesa-phone" placeholder="07XXXXXXXX">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-items">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                <h3>Total: <span id="order-total">$0</span></h3>
+            </div>
+        </div>
+        
+        <!-- Payment Processing Modal -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="modal-title">Processing Payment</h3>
+                <p id="modal-message">Please wait while we process your payment...</p>
+                <div class="loader"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>

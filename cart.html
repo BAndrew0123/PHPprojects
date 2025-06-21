@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="ecommerce.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eda49a6855.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="ecommerce.html">EShop</a>
+            </div>
+            <div class="searchBar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+            <div class="navlinks">
+                <ul>
+                    <li><a href="ecommerce.html#home">Home</a></li>
+                    <li><a href="ecommerce.html#Products">Products</a></li>
+                    <li><a href="ecommerce.html#contact">Contact Us</a></li>
+                    <li>
+                        <a href="cart.html">
+                            Cart <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="cart-title">Your Shopping Cart</h1>
+        <div class="cart-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Items will be dynamically added here -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <h3>Total: <span id="cart-total">$0</span></h3>
+                <button class="checkout-btn" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>EShop</h2>
+                <p>Providing quality services and products with excellence.</p>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="ecommerce.html">Home</a></li>
+                    <li><a href="ecommerce.html#Products">Products</a></li>
+                    <li><a href="ecommerce.html#contact">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 EShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
